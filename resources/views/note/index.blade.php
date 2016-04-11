@@ -11,15 +11,17 @@
         <tr>
           <th class="mdl-data-table__cell--non-numeric">Cím</th>
           <th class="mdl-data-table__cell--non-numeric">Felvéve</th>
-          <th>#</th>
+          <th class="mdl-data-table__cell--non-numeric">Szerkesztve</th>
+          <th>Funkciók</th>
         </tr>
       </thead>
       <tbody>
 
         <tr>
           <td class="mdl-data-table__cell--non-numeric">
-              <a href="{{ route('note.show', ['id' => 2]) }}">Acrylic (Transparent)</a>
+              <a href="{{ route('note.show', ['id' => 2]) }}">Carrot cake cookie candy</a>
           </td>
+          <td class="mdl-data-table__cell--non-numeric">2012. 05. 16.</td>
           <td class="mdl-data-table__cell--non-numeric">2012. 05. 16.</td>
           <td>
               <form action="{{ route('note.destroy', ['id' => 1]) }}" method="post">
@@ -29,7 +31,7 @@
                   {{ csrf_field() }}
                   {{ method_field('DELETE') }}
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                      Törlés
+                      Töröl
                     </button>
               </form>
           </td>
