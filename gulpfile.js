@@ -1,4 +1,6 @@
 var elixir = require('laravel-elixir');
+var bower = './bower_components/';
+var res = './resources/assets/';
 
 /*
  |--------------------------------------------------------------------------
@@ -13,11 +15,28 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix
-        .sass('app.scss')
-        .scripts('app.js')
+        .sass([
+            'app.scss'
+        ], res + 'css/app.css')
+
+        .styles([
+            bower + 'material-design-lite/material.min.css',
+            'app.css',
+        ], 'public/css/app.css')
+
+        .scripts([
+            bower + 'material-design-lite/material.min.js',
+            'app.js',
+        ], 'public/js/app.js')
+
+        .copy(
+            bower + 'material-design-icons/iconfont',
+            './public/fonts'
+        )
+
         .version([
-            'css/all.css',
-            'js/all.js'
+            'css/app.css',
+            'js/app.js'
         ]);
 
 
