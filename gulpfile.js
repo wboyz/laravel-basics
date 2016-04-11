@@ -21,6 +21,7 @@ elixir(function(mix) {
 
         .styles([
             bower + 'material-design-lite/material.min.css',
+            'material.deep_orange-deep_purple.min.css',
             'app.css',
         ], 'public/css/app.css')
 

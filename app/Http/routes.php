@@ -23,7 +23,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/note/{id}', ['as' => 'note.show', 'uses' => 'NoteController@show']);
     Route::get('/note/{id}/edit', ['as' => 'note.edit', 'uses' => 'NoteController@edit']);
     Route::put('/note/{id}', ['as' => 'note.update', 'uses' => 'NoteController@update']);
-    Route::delete('/note/{id}', ['as' => 'note.update', 'uses' => 'NoteController@update']);
+    Route::delete('/note/{id}', ['as' => 'note.destroy', 'uses' => 'NoteController@destroy']);
 
     // Route Group Example
     // Route::group(['prefix' => 'note', 'as' => 'note.'], function() {

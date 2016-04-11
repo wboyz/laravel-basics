@@ -47,7 +47,7 @@ class NoteController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('note.show');
     }
 
     /**
