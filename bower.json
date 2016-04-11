@@ -1,0 +1,22 @@
+{
+  "name": "laravel-basics",
+  "description": "",
+  "main": "",
+  "authors": [
+    "verebelyicsaba <verebeyi.csaba@zengo.eu>",
+    "verebelyibertalan <verebeyi.bertalan@zengo.eu>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wboyz/laravel-basics",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "^1.1.3"
+  }
+}
