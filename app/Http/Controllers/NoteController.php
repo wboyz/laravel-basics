@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Note;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
@@ -15,7 +15,9 @@ class NoteController extends Controller
      */
     public function index()
     {
-        return view('note.index');
+        $notes = Note::all();
+
+        return view('note.index', compact('notes'));
     }
 
     /**
@@ -36,7 +38,9 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $note = Note::create($request->all());
+
+        return redirect()->route('note.index');
     }
 
     /**
@@ -47,7 +51,9 @@ class NoteController extends Controller
      */
     public function show($id)
     {
-        return view('note.show');
+        $note = Note::find($id);
+
+        return view('note.show', compact('note'));
     }
 
     /**
@@ -58,7 +64,9 @@ class NoteController extends Controller
      */
     public function edit($id)
     {
-        return view('note.edit');
+        $note = Note::find($id);
+
+        return view('note.edit', compact('note'));
     }
 
     /**
@@ -70,7 +78,10 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $note = Note::find($id);
+        $note->update($request->all());
+
+        return redirect()->route('note.index');
     }
 
     /**
@@ -81,6 +92,9 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::find($id);
+        $note->delete();
+
+        return redirect()->route('note.index');
     }
 }

@@ -7,12 +7,12 @@
 <div class="mdl-card__supporting-text">
 
   <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="title" value="{{ $title or old('title') }}">
+    <input class="mdl-textfield__input" name="title" type="text" id="title" value="{{ $title or old('title') }}">
     <label class="mdl-textfield__label" for="title">Cím</label>
   </div>
 
   <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <textarea class="mdl-textfield__input" type="text" rows="3" id="description">{{ $description or old('description') }}</textarea>
+    <textarea class="mdl-textfield__input" name="description" type="text" rows="3" id="description">{{ $description or old('description') }}</textarea>
     <label class="mdl-textfield__label" for="description">Jegyzet szövege</label>
   </div>
 

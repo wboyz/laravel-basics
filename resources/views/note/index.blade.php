@@ -17,25 +17,27 @@
       </thead>
       <tbody>
 
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">
-              <a href="{{ route('note.show', ['id' => 2]) }}">Carrot cake cookie candy</a>
-          </td>
-          <td class="mdl-data-table__cell--non-numeric">2012. 05. 16.</td>
-          <td class="mdl-data-table__cell--non-numeric">2012. 05. 16.</td>
-          <td>
-              <form action="{{ route('note.destroy', ['id' => 1]) }}" method="post">
-                  <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary", href="{{ route('note.edit', ['id' => 1]) }}">
-                    Szerkeszt
-                  </a>
-                  {{ csrf_field() }}
-                  {{ method_field('DELETE') }}
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                      Töröl
-                    </button>
-              </form>
-          </td>
-        </tr>
+        @foreach($notes as $note)
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">
+                  <a href="{{ route('note.show', ['id' => $note->id]) }}">{{ $note->title }}</a>
+              </td>
+              <td class="mdl-data-table__cell--non-numeric">{{ $note->created_at }}</td>
+              <td class="mdl-data-table__cell--non-numeric">{{ $note->updated_at }}</td>
+              <td>
+                  <form action="{{ route('note.destroy', ['id' => $note->id]) }}" method="post">
+                      <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary", href="{{ route('note.edit', ['id' => $note->id]) }}">
+                        Szerkeszt
+                      </a>
+                      {{ csrf_field() }}
+                      {{ method_field('DELETE') }}
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                          Töröl
+                        </button>
+                  </form>
+              </td>
+            </tr>
+        @endforeach
 
       </tbody>
     </table>

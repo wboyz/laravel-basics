@@ -9,12 +9,12 @@
 
   <div class="mdl-card mdl-shadow--2dp mdl mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
 
-    <form action="{{ route('note.update', ['id' => 2]) }}" method="post">
+    <form action="{{ route('note.update', ['id' => $note->id]) }}" method="post">
       {{ method_field('PUT') }}
       @include('note.partials.form', [
         'callout' => 'Itt módosíthatja meglévő jegyzetét.',
-        'title' => 'Név',
-        'description' => 'Ez egy leírás',
+        'title' => $note->title,
+        'description' => $note->description,
         'button' => 'Mentés'
       ])
 
